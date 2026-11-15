@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#050814" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="accent-cyan-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2" />
+    </linearGradient>
+
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" stroke-opacity="0.4" />
+      <circle cx="40" cy="40" r="1" fill="#38bdf8" fill-opacity="0.2" />
+    </pattern>
+
+    <style>
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-8px) rotate(1deg); }
+      }
+      @keyframes pulseOrb {
+        0%, 100% { transform: scale(1); opacity: 0.35; }
+        50% { transform: scale(1.15); opacity: 0.65; }
+      }
+      @keyframes radarSweep {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes flowDash {
+        0% { stroke-dashoffset: 120; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes shimmerGlow {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 0.85; }
+      }
+      .floating-pill {
+        animation: floatSlow 6s ease-in-out infinite;
+      }
+      .glowing-orb {
+        animation: pulseOrb 8s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .shimmer-line {
+        stroke-dasharray: 8 6;
+        animation: flowDash 15s linear infinite;
+      }
+      .shield-radar {
+        animation: radarSweep 10s linear infinite;
+        transform-origin: 1040px 170px;
+      }
+      .title-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+      .subtitle-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+      }
+      .tag-text {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-weight: 600;
+        font-size: 13px;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="420" fill="url(#bg-grad)" rx="16" />
+  <rect width="1200" height="420" fill="url(#grid-pattern)" rx="16" />
+
+  <!-- Dynamic Glowing Ambient Orbs (Background) -->
+  <circle cx="150" cy="80" r="140" fill="#06b6d4" class="glowing-orb" filter="url(#glow-cyan)" />
+  <circle cx="1060" cy="180" r="160" fill="#8b5cf6" class="glowing-orb" filter="url(#glow-purple)" style="animation-delay: -3s;" />
+  <circle cx="650" cy="380" r="180" fill="#3b82f6" class="glowing-orb" filter="url(#glow-cyan)" style="animation-delay: -5s;" />
+
+  <!-- Dynamic Flow Lines (Network Grid / Policy Pipelines) -->
+  <g opacity="0.35">
+    <path d="M 50 360 C 300 360, 400 280, 650 310 C 900 340, 950 200, 1150 200" fill="none" stroke="#38bdf8" stroke-width="2" class="shimmer-line" />
+    <path d="M 50 100 C 250 80, 450 180, 750 140 C 950 100, 1050 240, 1150 260" fill="none" stroke="#818cf8" stroke-width="1.5" class="shimmer-line" style="animation-direction: reverse;" />
+  </g>
+
+  <!-- Right Decorative Geometric / Policy Shield Node -->
+  <g transform="translate(40, 0)">
+    <!-- Radar Sweep Effect -->
+    <g class="shield-radar" opacity="0.25">
+      <circle cx="1040" cy="170" r="110" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4 6" />
+      <line x1="1040" y1="170" x2="1150" y2="170" stroke="#06b6d4" stroke-width="2" />
+    </g>
+
+    <!-- Concentric Circles -->
+    <circle cx="1040" cy="170" r="90" fill="none" stroke="#1e293b" stroke-width="2" />
+    <circle cx="1040" cy="170" r="60" fill="none" stroke="#334155" stroke-width="1.5" />
+
+    <!-- Center Security Shield -->
+    <g transform="translate(1005, 130)">
+      <polygon points="35,5 65,15 65,55 35,75 5,55 5,15" fill="url(#shield-grad)" stroke="#38bdf8" stroke-width="2.5" />
+      <path d="M 23 40 L 32 49 L 49 30" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+
+    <!-- Floating Badge 1 (Kube / Admission) -->
+    <g class="floating-pill" style="animation-delay: -1s;">
+      <rect x="910" y="80" width="130" height="34" rx="17" fill="url(#card-grad)" stroke="#06b6d4" stroke-width="1.2" />
+      <circle cx="928" cy="97" r="5" fill="#10b981" />
+      <text x="942" y="102" fill="#e2e8f0" class="tag-text">admission: ✓</text>
+    </g>
+
+    <!-- Floating Badge 2 (Rego / OPA) -->
+    <g class="floating-pill" style="animation-delay: -3s;">
+      <rect x="980" y="270" width="140" height="34" rx="17" fill="url(#card-grad)" stroke="#818cf8" stroke-width="1.2" />
+      <circle cx="998" cy="287" r="5" fill="#38bdf8" />
+      <text x="1012" y="292" fill="#e2e8f0" class="tag-text">rego / yaml: 100%</text>
+    </g>
+
+    <!-- Floating Badge 3 (Cloud Guardrails) -->
+    <g class="floating-pill" style="animation-delay: -4.5s;">
+      <rect x="850" y="220" width="135" height="34" rx="17" fill="url(#card-grad)" stroke="#ec4899" stroke-width="1.2" stroke-opacity="0.8" />
+      <circle cx="868" cy="237" r="5" fill="#ec4899" />
+      <text x="882" y="242" fill="#e2e8f0" class="tag-text">guardrails: on</text>
+    </g>
+  </g>
+
+  <!-- Foreground Main Title & Content (Ensured Clear Foreground Visibility) -->
+  <g transform="translate(80, 0)">
+    <!-- Top Category Tag -->
+    <rect x="0" y="70" width="260" height="30" rx="15" fill="#0f172a" stroke="#0284c7" stroke-width="1.2" />
+    <circle cx="15" cy="85" r="4" fill="#38bdf8" />
+    <text x="28" y="90" fill="#38bdf8" class="tag-text">POLICY-AS-CODE &amp; GOVERNANCE</text>
+
+    <!-- Main Title -->
+    <text x="0" y="150" fill="#ffffff" class="title-text" font-size="44">
+      Enterprise Policy Enforcement
+    </text>
+    <text x="0" y="202" fill="url(#accent-cyan-blue)" class="title-text" font-size="42">
+      &amp; Cloud Governance Ecosystem
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="0" y="250" fill="#94a3b8" class="subtitle-text" font-size="18">
+      Curated guide to Policy-as-Code engines, Kubernetes admission controllers,
+    </text>
+    <text x="0" y="276" fill="#94a3b8" class="subtitle-text" font-size="18">
+      and automated multi-cloud compliance platforms (SaaS &amp; Open Source).
+    </text>
+
+    <!-- Feature Pill Badges -->
+    <g transform="translate(0, 312)">
+      <!-- Pill 1 -->
+      <rect x="0" y="0" width="160" height="36" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="14" y="23" fill="#cbd5e1" class="subtitle-text" font-size="14" font-weight="600">🛡️ Policy-as-Code</text>
+
+      <!-- Pill 2 -->
+      <rect x="175" y="0" width="180" height="36" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="189" y="23" fill="#cbd5e1" class="subtitle-text" font-size="14" font-weight="600">☸️ Admission Control</text>
+
+      <!-- Pill 3 -->
+      <rect x="370" y="0" width="170" height="36" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="384" y="23" fill="#cbd5e1" class="subtitle-text" font-size="14" font-weight="600">☁️ Cloud Governance</text>
+
+      <!-- Pill 4 -->
+      <rect x="555" y="0" width="150" height="36" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="569" y="23" fill="#cbd5e1" class="subtitle-text" font-size="14" font-weight="600">⚡ Shift-Left CI/CD</text>
+    </g>
+  </g>
+</svg>
