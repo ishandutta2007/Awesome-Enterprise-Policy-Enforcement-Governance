@@ -59,7 +59,7 @@ The table below catalogs premier commercial SaaS and managed platforms for enter
 
 The following active open-source engines, CLI validators, and admission controllers are sorted in descending order by GitHub stargazers. ⭐
 
-| Project | Stars | Language | Primary Domain | Description |
+| Project | GitHub_Stars | Language | Primary Domain | Description |
 | :--- | :---: | :---: | :--- | :--- |
 | **[Trivy](https://github.com/aquasecurity/trivy)** | [![Stars](https://img.shields.io/github/stars/aquasecurity/trivy?style=social&color=white)](https://github.com/aquasecurity/trivy/stargazers) | Go | Container & IaC Policy / CVEs | Comprehensive multi-purpose security scanner for container images, Git repositories, Kubernetes manifests, and IaC (Terraform, CloudFormation, Dockerfile) with built-in Rego policy auditing. |
 | **[Infracost](https://github.com/infracost/infracost)** | [![Stars](https://img.shields.io/github/stars/infracost/infracost?style=social&color=white)](https://github.com/infracost/infracost/stargazers) | Go | FinOps & Cost Policy | FinOps policy engine for Terraform and OpenTofu. Enables engineering teams to define policy-as-code guardrails preventing unexpected cloud infrastructure budget overruns in pull requests. |
@@ -111,8 +111,8 @@ The following active open-source engines, CLI validators, and admission controll
 Contributions and additions are warmly welcomed! 🙌
 
 1. Fork this repository. 🍴
-2. Ensure entries conform to standard table structures (Pricing, Free Tier limits, or Star badges linking to `/stargazers`). 📋
-3. For open-source additions, ensure the star badge uses `style=social` and `color=white` and projects are sorted descending by star count. 🌟
+2. Ensure entries conform to standard table structures (Pricing, Free Tier limits, or Stars_Badges linking to `/stargazers`). 📋
+3. For open-source additions, ensure the Stars_Badge uses `style=social` and `color=white` and projects are sorted descending by Stars_Count. 🌟
 4. Submit a pull request with a concise overview of the tool. 🚀
 
 ---
